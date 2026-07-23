@@ -11,7 +11,15 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activePage, setActivePage] = useState("home");
 
-  const sections = siteContent.navigation;
+  const sections = useMemo(() => {
+    const items = [...siteContent.navigation];
+    return [
+      items[0],
+      { id: "section1b", label: "축하영상" },
+      ...items.slice(1)
+    ];
+  }, []);
+
   const menuItems = useMemo(
     () => [...sections, { id: "contact", label: "CONTACT" }],
     [sections]
@@ -180,6 +188,44 @@ function App() {
               </div>
             </section>
 
+            <section
+              className="panel bg-firm"
+              id="section1b"
+              style={{
+                minHeight: "auto",
+                backgroundImage: "url('/assets/main_visual_2_1.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat"
+              }}
+            >
+              <div className="panel-content" style={{ maxWidth: "940px" }}>
+                <h2 style={{ marginBottom: "1.25rem" }}>축하영상</h2>
+                <div
+                  style={{
+                    width: "100%",
+                    aspectRatio: "16 / 9",
+                    backgroundImage: "url('/assets/main_visual_2_1.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    border: "1px solid rgba(255,255,255,0.18)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#fff",
+                    fontSize: "1rem",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    padding: "1rem",
+                    textAlign: "center"
+                  }}
+                >
+                  여기에영상주소수정대기
+                </div>
+              </div>
+            </section>
+
             <SliderSection
               id="section2"
               className="bg-firm"
@@ -225,19 +271,61 @@ function App() {
 
             <footer className="site-footer">
               <div>
-                <h3>{siteContent.footer.heading}</h3>
-                <p>
-                  {siteContent.footer.description}{" "}
+                <div>
+                  <h3>{siteContent.footer.heading}</h3>
+                  <p>
+                    {siteContent.footer.description}{" "}
+                    <a
+                      href="#contact"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        setActivePage("contact");
+                      }}
+                    >
+                      {siteContent.footer.contactLabel}
+                    </a>
+                  </p>
+                </div>
+                <div
+                  style={{
+                    marginTop: "24px",
+                    paddingTop: "20px",
+                    borderTop: "1px solid rgba(0, 0, 0, 0.16)"
+                  }}
+                >
+                  <h3 style={{ color: "#d11a2a", fontWeight: 700 }}>
+                    {siteContent.footer.secondaryContact.heading}
+                  </h3>
+                  <p style={{ color: "#000", fontWeight: 600, fontSize: "15px", lineHeight: 1.45, whiteSpace: "pre-line" }}>
+                    {siteContent.footer.secondaryContact.description}
+                  </p>
                   <a
-                    href="#contact"
-                    onClick={(event) => {
-                      event.preventDefault();
-                      setActivePage("contact");
+                    href="https://www.fss.or.kr/fss/job/lrgInfo/totalView.do?viewType=BODY&lrgClsfcNo=C00861205505922573"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      marginTop: "10px",
+                      padding: "7px 12px",
+                      border: "1px solid #c7c7c7",
+                      borderRadius: "999px",
+                      background: "#f3f3f3",
+                      color: "#222",
+                      fontWeight: 500,
+                      fontSize: "12px",
+                      boxShadow: "0 1px 2px rgba(0, 0, 0, 0.06)"
                     }}
                   >
-                    {siteContent.footer.contactLabel}
+                    <img
+                      src="/assets/fss-logo.svg"
+                      alt="금융감독원"
+                      style={{ width: "18px", height: "18px", objectFit: "contain" }}
+                    />
+                    {siteContent.footer.secondaryContact.contactLabel}
                   </a>
-                </p>
+                </div>
               </div>
               <div className="footer-bottom">
                 <nav>

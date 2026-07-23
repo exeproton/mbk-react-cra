@@ -101,12 +101,20 @@ export const siteContent = {
   },
   footer: {
     heading: "CONTACT",
-    description: "증권전용 HOTLINE 070-2000-0000",
+    description: "STOCK HOTLINE 070-2000-0000 ",
     contactLabel: "문의하기",
+    secondaryContact: {
+      heading: "주식 위탁거래에 관한 법률 및 고객자산 보호 및 운영기준 안내",
+      description: "당사는 위탁증거금과 수수료의 산정·관리 및 처리에 관한 업무를 관계 법령과 금융감독당국이 공표한 기준 및 지침에 따라 운영하고 있습니다. \n고객이 예치한 자산은 회사의 운영자산과 구분하여 관리하는 것을 원칙으로 하며, 관련 규정과 내부통제 절차에 따라 안전하게 보호됩니다. \n또한 수수료와 증거금 기준을 고객에게 명확하고 투명하게 안내하고, 관련 제도나 기준이 변경되는 경우 그 내용을 신속하게 고지함으로써 고객의 권익과 자산 보호에 최선을 다하겠습니다.",
+      contactLabel: "바로가기"
+    },
     copyright: "©2026 MBK Partners. All rights reserved.",
+    
     links: [
       { label: "Contact", href: "https://www.mbkpartners.com/contact/" },
      { label: "패밀리사이트", href: "?" },
     ]
+    
   }
+  
 };
