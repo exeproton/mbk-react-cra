@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import ContactPage from "./components/ContactPage";
+import PopupModal from "./components/PopupModal";
 import ContentSection from "./components/ContentSection";
 import SliderSection from "./components/SliderSection";
 import { siteContent } from "./data/siteContent";
@@ -10,6 +11,7 @@ function App() {
   const [strategySlide, setStrategySlide] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activePage, setActivePage] = useState("home");
+  const [popupOpen, setPopupOpen] = useState(true);
 
   const sections = useMemo(() => {
     const items = [...siteContent.navigation];
@@ -341,7 +343,10 @@ function App() {
           </>
         )}
       </main>
-
+      {/* 홈페이지에서만 표시되는 우측 하단 팝업 */}
+      {popupOpen && activePage === "home" && (
+        <PopupModal onClose={() => setPopupOpen(false)} />
+      )}
       <button
         className="scroll-control"
         type="button"

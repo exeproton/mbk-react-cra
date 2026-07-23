@@ -1,7 +1,4 @@
-/*
- * 홈페이지 문구, 링크와 숫자는 대부분 이 파일에서 수정할 수 있습니다.
- * 이미지는 public/assets 폴더에 넣고 /assets/파일명 형식으로 지정하세요.
- */
+
 
 export const siteContent = {
   investorRelationsUrl: "수정대기",
