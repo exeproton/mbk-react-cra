@@ -72,3 +72,478 @@ button{font:inherit}
  .scroll-control{bottom:10px}.footer-bottom{gap:22px;flex-direction:column}.footer-bottom nav{flex-wrap:wrap}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact-page {
+  min-height: 100vh;
+  color: #000;
+  background: #fff;
+  font-family: Arial, "Helvetica Neue", sans-serif;
+}
+
+.contact-page,
+.contact-page * {
+  box-sizing: border-box;
+}
+
+.contact-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Header */
+
+.contact-page__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  width: 100%;
+  height: 74px;
+  padding: 0 48px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-page__logo {
+  display: block;
+}
+
+.contact-page__logo img {
+  display: block;
+  width: 80px;
+  height: auto;
+}
+
+.contact-page__header-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.contact-page__investor {
+  color: #fff !important;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+
+.contact-page__menu-button {
+  width: 32px;
+  height: 32px;
+  padding: 7px 4px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.contact-page__menu-button span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  background: #fff;
+}
+
+/* Fullscreen menu */
+
+.contact-page__menu {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  background:
+    linear-gradient(
+      rgba(0, 45, 85, 0.9),
+      rgba(0, 45, 85, 0.9)
+    ),
+    url("./assets/bg_gnb_menu.jpg") center / cover no-repeat;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+
+.contact-page__menu--open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.contact-page__menu-close {
+  position: absolute;
+  top: 18px;
+  right: 45px;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  color: #fff;
+  border: 0;
+  background: transparent;
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 42px;
+  cursor: pointer;
+}
+
+.contact-page__menu-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.contact-page__menu-nav a {
+  position: relative;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  transition: color 0.25s ease;
+}
+
+.contact-page__menu-nav a:hover,
+.contact-page__menu-nav .contact-page__menu-current {
+  color: #fff;
+}
+
+.contact-page__menu-current::after {
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  left: 0;
+  height: 1px;
+  background: #fff;
+  content: "";
+}
+
+/* Video hero */
+
+.contact-page__visual {
+  position: relative;
+  display: flex;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  background: #00305c;
+}
+
+.contact-page__video {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.contact-page__video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177.78vh;
+  min-width: 100%;
+  height: 56.25vw;
+  min-height: 100%;
+  border: 0;
+  transform: translate(-50%, -50%) scale(1.03);
+  pointer-events: none;
+}
+
+.contact-page__visual-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 48, 92, 0.25);
+}
+
+.contact-page__visual h1 {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #fff;
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.2;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Office information */
+
+.contact-page__content {
+  width: 100%;
+  background: #fff;
+}
+
+.contact-page__office-list {
+  max-width: 1340px;
+  margin: 80px auto 150px;
+  padding: 0 10px;
+}
+
+.contact-page__office {
+  position: relative;
+  padding: 0 0 30px;
+  border-bottom: 2px solid #000;
+}
+
+.contact-page__office + .contact-page__office {
+  margin-top: 70px;
+}
+
+.contact-page__office h2 {
+  margin: 0;
+  padding: 0 0 15px;
+  color: #000;
+  border-bottom: 1px solid #cbcbcb;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.contact-page__office-information {
+  padding-right: 250px;
+}
+
+.contact-page__office-information h3 {
+  margin: 30px 0 0;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.contact-page__office-information ul {
+  margin: 15px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-page__office-information li {
+  color: #000;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact-page__office-information li a:hover {
+  text-decoration: underline;
+}
+
+.contact-page__directions {
+  position: absolute;
+  right: 0;
+  bottom: 27px;
+  display: flex;
+  width: 180px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  background: #3a76ac;
+  font-size: 18px;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.contact-page__directions:hover {
+  color: #3a76ac !important;
+  outline: 1px solid #3a76ac;
+  background: #fff;
+}
+
+/* Top button */
+
+.contact-page__top {
+  position: fixed;
+  right: 28px;
+  bottom: 115px;
+  z-index: 80;
+  display: flex;
+  width: 52px;
+  height: 52px;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  border: 0;
+  background: rgba(0, 48, 92, 0.9);
+  cursor: pointer;
+}
+
+.contact-page__top span {
+  font-size: 20px;
+  line-height: 18px;
+}
+
+.contact-page__top small {
+  margin-top: 2px;
+  font-size: 9px;
+}
+
+/* Footer */
+
+.contact-page__footer {
+  padding: 32px 0;
+  color: #222;
+  background: #f2f2f2;
+}
+
+.contact-page__footer-inner {
+  display: flex;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-page__footer nav {
+  display: flex;
+  gap: 25px;
+}
+
+.contact-page__footer a,
+.contact-page__footer p {
+  margin: 0;
+  color: #222;
+  font-size: 12px;
+}
+
+.contact-page__footer a:hover {
+  text-decoration: underline;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .contact-page__visual {
+    height: 400px;
+  }
+
+  .contact-page__office-list {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .contact-page__footer-inner {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .contact-page__header {
+    height: 64px;
+    padding: 0 20px;
+  }
+
+  .contact-page__logo img {
+    width: 72px;
+  }
+
+  .contact-page__investor {
+    display: none;
+  }
+
+  .contact-page__menu-close {
+    top: 12px;
+    right: 17px;
+  }
+
+  .contact-page__menu-nav {
+    gap: 15px;
+  }
+
+  .contact-page__menu-nav a {
+    font-size: 21px;
+  }
+
+  .contact-page__visual {
+    height: 300px;
+  }
+
+  .contact-page__video iframe {
+    width: 220%;
+    height: 100%;
+  }
+
+  .contact-page__visual h1 {
+    font-size: 26px;
+  }
+
+  .contact-page__office-list {
+    margin: 40px auto;
+    padding: 30px 25px 0;
+  }
+
+  .contact-page__office {
+    padding-bottom: 20px;
+  }
+
+  .contact-page__office
+    + .contact-page__office {
+    margin-top: 40px;
+  }
+
+  .contact-page__office h2 {
+    padding-bottom: 10px;
+    font-size: 24px;
+  }
+
+  .contact-page__office-information {
+    padding-right: 0;
+  }
+
+  .contact-page__office-information h3 {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .contact-page__office-information ul {
+    margin-top: 15px;
+  }
+
+  .contact-page__office-information li {
+    font-size: 14px;
+  }
+
+  .contact-page__directions {
+    position: static;
+    display: flex;
+    width: 100%;
+    height: 35px;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+
+  .contact-page__top {
+    right: 15px;
+    bottom: 130px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .contact-page__footer {
+    padding: 28px 0;
+  }
+
+  .contact-page__footer-inner {
+    padding: 0 25px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-page__footer nav {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+}

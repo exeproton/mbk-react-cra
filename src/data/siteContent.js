@@ -4,7 +4,7 @@
  */
 
 export const siteContent = {
-  investorRelationsUrl: "https://statestreet-icx.efrontcloud.com/",
+  investorRelationsUrl: "수정대기",
   navigation: [
     { id: "section1", label: "MAIN" },
     { id: "section2", label: "FIRM" },
@@ -47,10 +47,7 @@ export const siteContent = {
         "한국, 일본, 중국 시장에 전략적 중점을 두고, 저희는 일반적으로 경영진 주도 인수 방식을 통해 투자자들을 위한 통합 솔루션을 개발하는 것을 목표로 합니다.",
         "MBK Partners Buyouts는 경영진과 협력하여 기업의 성장을 이끌어가는 데 있어 풍부한 경험을 보유하고 있습니다. 전략 개발, 자본 구조 최적화, 글로벌 모범 사례 도입기업 지배구조와 전략적 성장 기회 추구."
       ],
-      button: {
-        label: "Learn more about our buyout strategy",
-        href: "https://www.mbkpartners.com/strategy/"
-      }
+     
     },
     {
       title: "Special Situations",
@@ -58,10 +55,7 @@ export const siteContent = {
         "MBK Partners Special Situations provides timely and customized solutions to companies that have limited access to capital.",
         "With the flexibility of investing in several levels, we offer a customized and optimal investment structure for each transaction with equity-like returns and structured downside protection."
       ],
-      button: {
-        label: "Find out more about Special Situations",
-        href: "https://www.mbkpartners.com/strategy/#special"
-      }
+      
     }
   ],
   team: {
@@ -102,18 +96,17 @@ export const siteContent = {
     ],
     button: {
       label: "Read more news",
-      href: "https://www.mbkpartners.com/category/news/"
+      href: "https://www.koreatimes.co.kr/search"
     }
   },
   footer: {
     heading: "CONTACT",
-    description: "국내 운영 주체 : 증권전용 HOTLINE 070-2000-0000",
-    contactLabel: "contact us.",
+    description: "증권전용 HOTLINE 070-2000-0000",
+    contactLabel: "문의하기",
     copyright: "©2026 MBK Partners. All rights reserved.",
     links: [
       { label: "Contact", href: "https://www.mbkpartners.com/contact/" },
-      { label: "Privacy notice", href: "https://www.mbkpartners.com/privacy-policy/" },
-      { label: "Terms of use", href: "https://www.mbkpartners.com/terms-of-use/" }
+     { label: "패밀리사이트", href: "?" },
     ]
   }
 };

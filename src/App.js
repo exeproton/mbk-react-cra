@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import ContactPage from "./components/ContactPage";
 import ContentSection from "./components/ContentSection";
 import SliderSection from "./components/SliderSection";
 import { siteContent } from "./data/siteContent";
@@ -8,8 +9,13 @@ function App() {
   const [firmSlide, setFirmSlide] = useState(0);
   const [strategySlide, setStrategySlide] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activePage, setActivePage] = useState("home");
 
   const sections = siteContent.navigation;
+  const menuItems = useMemo(
+    () => [...sections, { id: "contact", label: "CONTACT" }],
+    [sections]
+  );
 
   useEffect(() => {
     const elements = sections
@@ -70,6 +76,20 @@ function App() {
     });
   };
 
+  const handleMenuNavigate = (item) => {
+    setMenuOpen(false);
+
+    if (item.id === "contact") {
+      setActivePage("contact");
+      return;
+    }
+
+    setActivePage("home");
+    requestAnimationFrame(() => {
+      document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+    });
+  };
+
   return (
     <>
       <header className="site-header">
@@ -83,7 +103,7 @@ function App() {
             target="_blank"
             rel="noreferrer"
           >
-            Investor Relations
+            솔루션도메인OR대리매매알려주는랜딩넣어도되는자리
           </a>
           <button
             className="menu-button"
@@ -124,11 +144,14 @@ function App() {
           ×
         </button>
         <nav>
-          {sections.map((item) => (
+          {menuItems.map((item) => (
             <a
               href={`#${item.id}`}
               key={item.id}
-              onClick={() => setMenuOpen(false)}
+              onClick={(event) => {
+                event.preventDefault();
+                handleMenuNavigate(item);
+              }}
             >
               {item.label}
             </a>
@@ -137,86 +160,98 @@ function App() {
       </div>
 
       <main>
-        <section className="panel hero" id="section1">
-          <div className="video-bg">
-            <iframe
-              src={siteContent.hero.videoUrl}
-              allow="autoplay; fullscreen; picture-in-picture"
-              title="MBK Partners background video"
+        {activePage === "contact" ? (
+          <ContactPage onBackToHome={() => setActivePage("home")} />
+        ) : (
+          <>
+            <section className="panel hero" id="section1">
+              <div className="video-bg">
+                <iframe
+                  src={siteContent.hero.videoUrl}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  title="MBK Partners background video"
+                />
+              </div>
+              <div className="panel-content hero-content">
+                <h1>
+                  <span>{siteContent.hero.title}</span>
+                </h1>
+                <p>{siteContent.hero.description}</p>
+              </div>
+            </section>
+
+            <SliderSection
+              id="section2"
+              className="bg-firm"
+              slides={firmSlides}
+              activeSlide={firmSlide}
+              onSlideChange={setFirmSlide}
             />
-          </div>
-          <div className="panel-content hero-content">
-            <h1>
-              <span>{siteContent.hero.title}</span>
-            </h1>
-            <p>{siteContent.hero.description}</p>
-          </div>
-        </section>
 
-        <SliderSection
-          id="section2"
-          className="bg-firm"
-          slides={firmSlides}
-          activeSlide={firmSlide}
-          onSlideChange={setFirmSlide}
-        />
+            <SliderSection
+              id="section3"
+              className="bg-strategy"
+              slides={siteContent.strategy}
+              activeSlide={strategySlide}
+              onSlideChange={setStrategySlide}
+            />
 
-        <SliderSection
-          id="section3"
-          className="bg-strategy"
-          slides={siteContent.strategy}
-          activeSlide={strategySlide}
-          onSlideChange={setStrategySlide}
-        />
+            <ContentSection id="section4" className="bg-team" {...siteContent.team} />
+            <ContentSection
+              id="section5"
+              className="bg-portfolio"
+              {...siteContent.portfolio}
+            />
 
-        <ContentSection id="section4" className="bg-team" {...siteContent.team} />
-        <ContentSection
-          id="section5"
-          className="bg-portfolio"
-          {...siteContent.portfolio}
-        />
-
-        <section className="panel bg-news" id="section6">
-          <div className="panel-content news-content">
-            <h2>{siteContent.news.title}</h2>
-            <p>{siteContent.news.description}</p>
-            <ul className="news-list">
-              {siteContent.news.items.map((item) => (
-                <li key={item.title}>
-                  <a href={item.href}>
-                    <time>{item.date}</time>
-                    <strong>{item.title}</strong>
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <a className="outline-button" href={siteContent.news.button.href}>
-              {siteContent.news.button.label}
-            </a>
-          </div>
-        </section>
-
-        <footer className="site-footer">
-          <div>
-            <h3>{siteContent.footer.heading}</h3>
-            <p>
-              {siteContent.footer.description}{" "}
-              <a href={siteContent.footer.links[0].href}>
-                {siteContent.footer.contactLabel}
-              </a>
-            </p>
-          </div>
-          <div className="footer-bottom">
-            <nav>
-              {siteContent.footer.links.map((item) => (
-                <a href={item.href} key={item.label}>
-                  {item.label}
+            <section className="panel bg-news" id="section6">
+              <div className="panel-content news-content">
+                <h2>{siteContent.news.title}</h2>
+                <p>{siteContent.news.description}</p>
+                <ul className="news-list">
+                  {siteContent.news.items.map((item) => (
+                    <li key={item.title}>
+                      <a href={item.href}>
+                        <time>{item.date}</time>
+                        <strong>{item.title}</strong>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <a className="outline-button" href={siteContent.news.button.href}>
+                  {siteContent.news.button.label}
                 </a>
-              ))}
-            </nav>
-            <p>{siteContent.footer.copyright}</p>
-          </div>
-        </footer>
+              </div>
+            </section>
+
+            <footer className="site-footer">
+              <div>
+                <h3>{siteContent.footer.heading}</h3>
+                <p>
+                  {siteContent.footer.description}{" "}
+                  <a
+                    href="#contact"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setActivePage("contact");
+                    }}
+                  >
+                    {siteContent.footer.contactLabel}
+                  </a>
+                </p>
+              </div>
+              <div className="footer-bottom">
+                <nav>
+                  {siteContent.footer.links.map((item) => (
+                    <a href={item.href} key={item.label}>
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+                <p>{siteContent.footer.copyright}</p>
+              </div>
+            </footer>
+          </>
+        )}
       </main>
 
       <button
