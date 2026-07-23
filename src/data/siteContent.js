@@ -15,7 +15,7 @@ export const siteContent = {
   ],
   hero: {
     title: "MBK PARTNERS",
-    description: "North Asia’s largest independent private equity firm.",
+    description: "북아시아 최대 규모의 독립 사모펀드 회사.",
     videoUrl:
       "https://player.vimeo.com/video/454649038?autoplay=1&loop=1&muted=1&background=1&title=0&byline=0&portrait=0"
   },
@@ -23,15 +23,12 @@ export const siteContent = {
     overview: {
       title: "The Firm",
       paragraphs: [
-        "MBK Partners is an independent North Asian private equity firm.",
-        "Building on deep regional insights, our firm manages $33 billion in capital with an exclusive focus on markets in Korea, Japan and China.",
-        "We invest in telecom/media, financial services, consumer/retail, healthcare and other sectors.",
-        "By combining our scale and our position as a local and independent firm, MBK Partners offers a competitive advantage in sourcing, executing and managing investments."
+        "MBK Partners는 북아시아에 기반을 둔 독립적인 사모펀드 회사입니다.",
+        "저희 회사는 지역에 대한 깊이 있는 이해를 바탕으로 330억 달러 규모의 자산을 운용하고 있습니다. 한국, 일본, 중국 시장에만 집중합니다.",
+        "저희는 통신/미디어, 금융 서비스, 소비재/소매, 의료 및 기타 분야에 투자합니다.",
+        "우리는 규모의 경제와 지역 기반의 독립 기업으로서의 입지를 결합하여, MBK Partners는 투자 발굴, 실행 및 관리에 있어 경쟁 우위를 제공합니다."
       ],
-      button: {
-        label: "Learn more about MBK Partners",
-        href: "https://www.mbkpartners.com/profile/"
-      }
+     
     },
     numbersTitle: "MBK Partners by the Numbers",
     numbers: [
@@ -47,8 +44,8 @@ export const siteContent = {
     {
       title: "MBK Partners Buyouts",
       paragraphs: [
-        "With a strategic emphasis in Korean, Japanese and Chinese markets, we aim to develop unified solutions for our investors, typically through management-led buyouts.",
-        "MBK Partners Buyouts has extensive experience partnering with management to guide companies through strategy development, capital structure optimization, adoption of global best practices, corporate governance and the pursuit of strategic growth opportunities."
+        "한국, 일본, 중국 시장에 전략적 중점을 두고, 저희는 일반적으로 경영진 주도 인수 방식을 통해 투자자들을 위한 통합 솔루션을 개발하는 것을 목표로 합니다.",
+        "MBK Partners Buyouts는 경영진과 협력하여 기업의 성장을 이끌어가는 데 있어 풍부한 경험을 보유하고 있습니다. 전략 개발, 자본 구조 최적화, 글로벌 모범 사례 도입기업 지배구조와 전략적 성장 기회 추구."
       ],
       button: {
         label: "Learn more about our buyout strategy",
@@ -68,30 +65,24 @@ export const siteContent = {
     }
   ],
   team: {
-    title: "About the MBK Partners team",
+    title: "MBK 파트너스 팀 소개",
     paragraphs: [
-      "MBK Partners employs 110 investment professionals across five locations who combine strong market knowledge, an understanding of local networks and multinational experience to provide strategic guidance to both investors and the companies we support."
+      "MBK Partners는 5개 지점에 걸쳐 110명의 투자 전문가를 고용하고 있으며, 이들은 탄탄한 시장 지식을 보유하고 있습니다. 현지 네트워크에 대한 이해와 다국적 기업 경험을 바탕으로 투자자와 지원 대상 기업 모두에게 전략적 지침을 제공합니다 ."
     ],
-    button: {
-      label: "Meet our senior team",
-      href: "https://www.mbkpartners.com/category/team/"
-    }
+   
   },
   portfolio: {
     title: "Our portfolio",
     paragraphs: [
-      "MBK Partners has built a leading position in North Asia’s private equity market by developing solid local relationships and extensive market knowledge.",
-      "We seek to acquire industry-leading companies to achieve long-lasting value for investors, and we invest in a wide range of industries."
+      "MBK Partners는 탄탄한 현지 관계와 광범위한 시장 지식을 바탕으로 북아시아 사모펀드 시장에서 선도적인 위치를 구축해 왔습니다.",
+      " 저희는 다양한 산업 분야에 투자합니다. 또한 투자자들에게 지속적인 가치를 제공하기 위해 업계를 선도하는 기업들을 인수하고자 합니다."
     ],
-    button: {
-      label: "Find out more about our portfolio",
-      href: "https://www.mbkpartners.com/category/portfolio/"
-    }
+   
   },
   news: {
-    title: "MBK Partners in the News",
+    title: "MBK 파트너스 관련 뉴스",
     description:
-      "To read more about recent events at MBK Partners, see our recent news updates.",
+      "MBK 파트너스의 최근 소식에 대한 자세한 내용은 최근 뉴스 업데이트를 참조하십시오.",
     items: [
       {
         date: "November 5, 2024",
@@ -116,7 +107,7 @@ export const siteContent = {
   },
   footer: {
     heading: "CONTACT",
-    description: "For any inquiries, please",
+    description: "국내 운영 주체 : 증권전용 HOTLINE 070-2000-0000",
     contactLabel: "contact us.",
     copyright: "©2026 MBK Partners. All rights reserved.",
     links: [
